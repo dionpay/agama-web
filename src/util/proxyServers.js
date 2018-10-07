@@ -1,7 +1,7 @@
 export const proxyServers = [{
-  ip: 'www.atomicexplorer.com',
-  port: 9998,
-  ssl: true,
+  ip: '127.0.0.1',
+  port: 8118,
+  ssl: false,
 }];
 
 export default proxyServers;
