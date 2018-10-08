@@ -479,6 +479,7 @@ const LANG_EN = {
     VRSC: 'VerusCoin',
     CALL: 'Capital',
     CCL: 'CoinCollect',
+    DION: 'DionPay',
   },
   CRYPTO: {
     KMD: 'Komodo',
@@ -516,6 +517,7 @@ const LANG_EN = {
     QTUM: 'Qtum',
     BTCZ: 'BitcoinZ',
     CRW: 'Crown',
+    DION: 'DionPay',
   },
   RISKS_MODAL: {
     DESC_P1: 'This wallet is a web-based interface that allows you to use',
