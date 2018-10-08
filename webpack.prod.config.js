@@ -182,6 +182,8 @@ module.exports = {
   },
   plugins,
   devServer: {
+    disableHostCheck: true,
+    host: '0.0.0.0',
     contentBase: isProduction ? './build' : './src',
     historyApiFallback: true,
     port: 3000,

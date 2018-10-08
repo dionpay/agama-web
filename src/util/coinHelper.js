@@ -56,6 +56,13 @@ export const getCoinTitle = (coin) => {
       coinlogo = 'MESH';
       coinname = 'SpaceMesh';
       break;
+    case 'DION':
+      hideTitle = true;
+      titleBG = true;
+      transparentBG = true;
+      coinlogo = 'DION';
+      coinname = 'DionPay';
+      break;
   }
 
   return {
@@ -100,5 +107,6 @@ export const cryptoCoins = [
   'HODLC',
   'BTX',
   'QTUM',
-  'BTCZ'
+  'BTCZ',
+  'DION',
 ];

@@ -24,7 +24,7 @@ const NavbarRender = function() {
         <div className="navbar-brand navbar-brand-center site-gridmenu-toggle">
           <img
             className={ 'navbar-brand-logo hidden-xs' + (Config.whitelabel ? ' whitelabel' : '') }
-            src={ _imagePath + 'agama-logo-side.svg' }
+            src={ (Config.whitelabel ? _imagePath : _imagePath + 'agama-logo-side.svg') }
             height="100"
             width="100"
             title={ Config.whitelabel ? Config.wlConfig.title : translate('ABOUT.AGAMA_WALLET') } />
