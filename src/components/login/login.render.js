@@ -307,6 +307,75 @@ const LoginRender = function() {
           { this.state.activeLoginSection === 'signup' &&
             <div>
               <div className="register-form">
+                <h4 className="hint color-white">
+                  { translate('INDEX.SELECT_SEED_TYPE') }:
+                </h4>
+                <div className="row">
+                  <div className="col-sm-5 horizontal-padding-0">
+                    <div className="toggle-box vertical-padding-20">
+                      <span className="pointer">
+                        <label className="switch">
+                          <input
+                            type="checkbox"
+                            readOnly
+                            checked={ this.isCustomWalletSeed() } />
+                          <div
+                            className="slider"
+                            onClick={ () => this.toggleCustomWalletSeed() }></div>
+                        </label>
+                        <div
+                          className="toggle-label white"
+                          onClick={ () => this.toggleCustomWalletSeed() }>
+                          { translate('LOGIN.CUSTOM_WALLET_SEED') }
+                        </div>
+                      </span>
+                    </div>
+                  </div>
+                  <div className="col-sm-7 horizontal-padding-0">
+                  { !this.isCustomWalletSeed() &&
+                    <div>
+                      <div className="form-group form-material floating">
+                        <div
+                          className="radio-custom radio-default radio-inline"
+                          onClick={ () => this.state.bitsOption !== 256 && this.generateNewSeed(256) }>
+                          <input
+                            type="radio"
+                            name="PassPhraseOptions"
+                            checked={ this.state.bitsOption === 256 }
+                            readOnly />
+                          <label htmlFor="PassPhraseOptionsIguana">
+                            { translate('LOGIN.IGUANA_SEED') }
+                          </label>
+                        </div>
+                        <div
+                          className="radio-custom radio-default radio-inline"
+                          onClick={ () => this.state.bitsOption !== 160 && this.generateNewSeed(160) }>
+                          <input
+                            type="radio"
+                            name="PassPhraseOptions"
+                            checked={ this.state.bitsOption === 160 }
+                            readOnly />
+                          <label htmlFor="PassPhraseOptionsWaves">
+                            { translate('LOGIN.WAVES_SEED') }
+                          </label>
+                        </div>
+                        <div
+                          className="radio-custom radio-default radio-inline"
+                          onClick={ () => this.state.bitsOption !== 128 && this.generateNewSeed(128) }>
+                          <input
+                            type="radio"
+                            name="PassPhraseOptions"
+                            checked={ this.state.bitsOption === 128 }
+                            readOnly />
+                          <label htmlFor="PassPhraseOptionsNXT">
+                            { translate('LOGIN.NXT_SEED') }
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  }
+                  </div>
+                </div>
 
                 <div className="form-group form-material floating seed-tooltip">
                   <textarea

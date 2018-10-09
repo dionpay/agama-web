@@ -1,6 +1,6 @@
 export const proxyServers = [{
-  ip: 'www.atomicexplorer.com',
-  port: 9998,
+  ip: 'electrum1.utrum.io',
+  port: 9999,
   ssl: true,
 }];
 
