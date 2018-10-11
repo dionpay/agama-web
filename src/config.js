@@ -17,10 +17,11 @@ let Config = {
       name: 'DionPay',
       logo: 'cryptologo/dion.png', // dashboard coin logo
     },
-    explorer: 'http://explorer.dionpay.com', // insight or iquidus
+    explorer: 'https://explorer.dionpay.com', // insight or iquidus
     serverList: [ // electrum servers list
-      '104.238.176.229:50001:tcp',
-        '51.75.124.36:50001:tcp',
+      'electrum1.cipig.net:10030:tcp',
+      'electrum2.cipig.net:10030:tcp',
+      'electrum3.cipig.net:10030:tcp',
     ],
     support: {
       onlineLink: {
