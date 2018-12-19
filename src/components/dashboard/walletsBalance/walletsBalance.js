@@ -60,7 +60,7 @@ class WalletsBalance extends React.Component {
         if (type === 'total' &&
             _balanceProps &&
             _balanceProps.total) {
-          _balance = Number(_balanceProps.total) - Number(Math.abs(_balanceProps.unconfirmed));
+          _balance = Number(_balanceProps.total) + Number(_balanceProps.unconfirmed);
         }
 
         if (type === 'interest' &&
@@ -72,10 +72,10 @@ class WalletsBalance extends React.Component {
         if (type === 'transparent' &&
             _balanceProps &&
             _balanceProps.balance) {
-          _balance = Number(_balanceProps.balance) - Number(Math.abs(_balanceProps.unconfirmed));
+          _balance = Number(_balanceProps.balance) + Number(_balanceProps.unconfirmed);
         }
       } else {
-        _balance = Number(_balanceProps.balance) - Number(Math.abs(_balanceProps.unconfirmed));
+        _balance = Number(_balanceProps.balance) + Number(_balanceProps.unconfirmed);
       }
     }
 
@@ -113,8 +113,13 @@ class WalletsBalance extends React.Component {
             _fiatPricePerCoin > 0 &&
             <div
               data-tip={ `${translate('INDEX.PRICE_PER')} ${_coin} ~ $${formatValue(_fiatPricePerCoin)}` }
+              data-for="balance1"
               className="text-right">${ formatValue(_fiatPriceTotal) }</div>
           }
+          <ReactTooltip
+            id="balance1"
+            effect="solid"
+            className="text-left" />
         </div>
       );
     } else {
@@ -141,6 +146,13 @@ class WalletsBalance extends React.Component {
         <br />
       </span>
     );
+  }
+
+  renderUnconfBalanceIcon() {
+    if (this.props.ActiveCoin.balance.unconfirmed &&
+        Number(this.props.ActiveCoin.balance.unconfirmed) !== 0) {
+      return true;
+    }
   }
 
   render() {

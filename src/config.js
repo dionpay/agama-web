@@ -1,6 +1,6 @@
 // web app config
 let Config = {
-  version: '0.2.3-beta',
+  version: '0.2.5-beta',
   debug: false,
   defaultLang: 'EN',
   roundValues: false,
@@ -23,6 +23,7 @@ let Config = {
       'electrum2.cipig.net:10030:tcp',
       'electrum3.cipig.net:10030:tcp',
     ],
+    fee: 10000,
     support: {
       onlineLink: {
         url: 'http://dionpay.com',

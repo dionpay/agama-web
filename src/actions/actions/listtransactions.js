@@ -61,7 +61,7 @@ export const shepherdElectrumTransactions = (coin, address, full = true, verify 
           Config.log('currentHeight =>');
           Config.log(currentHeight);
 
-          let _urlParams = {
+          _urlParams = {
             ip: appData.servers[coin].ip,
             port: appData.servers[coin].port,
             proto: appData.servers[coin].proto,
@@ -115,7 +115,7 @@ export const shepherdElectrumTransactions = (coin, address, full = true, verify 
                         Config.log(transaction.raw);
 
                         // decode tx
-                        const _network = isKomodoCoin(coin) || (Config.whitelabel && Config.wlConfig.coin.ticker.toLowerCase() === coin) ? btcNetworks.kmd : btcNetworks[coin];
+                        const _network = isKomodoCoin(coin) || (Config.whitelabel && Config.wlConfig.coin.ticker.toLowerCase() === coin && !Config.wlConfig.coin.type) ? btcNetworks.kmd : btcNetworks[coin];
                         const decodedTx = transactionDecoder(transaction.raw, _network);
 
                         let txInputs = [];
